@@ -1,0 +1,89 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+overflow: hidden;
+/* 背景颜色渐变色 */
+   background-image: linear-gradient(to top, #c1dfc4 0%, #e9dde5 100%);
+}
+.box{
+position: relative;
+width: 150px;
+height: 300px;
+transform-style: preserve-3d;
+animation: animate 20s linear infinite;
+}
+
+.box:hover{
+animation-play-state: paused;
+}
+
+@keyframes animate{
+0%{
+transform: perspective(200px) rotateY(0deg);
+}
+100%{
+transform: perspective(200px) rotateY(360deg);
+}
+}
+
+.box span{
+position: absolute;
+top: 0;
+left: 0;
+width: 80%;
+height: 80%;
+transform-origin: center;
+transform-style: preserve-3d;
+transform: rotateY(calc(var(--i)*36deg)) translateZ(250px);
+/* 倒影 渐变*/
+-webkit-box-reflect: below 2px linear-gradient(transparent,transparent,rgba(4,4,4,0.267));
+}
+
+.title{
+position: absolute;
+width: 200px;
+left: 50%;
+top: 50%;
+color: #2085299d;
+text-shadow: 2px 3px 20px rgb(236 234 236);
+font-family: 华文琥珀;
+/* height: 200px; */
+transform: translate(-50%,-50%);
+}
+.title1{
+position: absolute;
+width: 20px;
+left: 50%;
+top: 50%;
+color: #8520629d;
+text-shadow: 2px 3px 20px rgb(236 234 236);
+font-family: 华文琥珀;
+height: 200px;
+transform: translate(-50%,-50%);
+font-size: 3vw;
+}
+
+.box span img{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transition: 0.5s;
+border-radius: 15px;
+border: 4px double #000;
+
+}
+.box img:hover{
+transform: translateX(20px) translateY(20px) scale(1.5) translateZ(2px);
+
+}
